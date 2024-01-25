@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{ 
+    background-image: url('../images/1.jpg');
+    overflow: hidden;
+    height: 100%;
+    vertical-align: middle;
+    line-height: normal;
+    align-content: center;
+    align-items: center;
+}
+::selection{
+  background: rgba(54, 84, 214, 0.3);
+}
+.container{
+    max-width: 440px;
+    padding: 0 20px;
+    margin: 105px auto !important;
+    vertical-align: middle;
+    line-height: normal;
+}
+.wrapper{
+    width: 100%; 
+    background: #fff;
+    border-radius: 5px; 
+    box-shadow: 3px 9px 10px 5PX rgba(41, 40, 40, 0.71);
+    vertical-align: middle;
+    line-height: normal;
+}
+.wrapper .title{
+    height: 90px;
+    background:  linear-gradient( #212027,#220FF3) ;
+    border-radius: 5px 5px 0 0;
+    color: rgb(247, 242, 242);
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form{
+    padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.wrapper form .row input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+form .row input:focus{
+    border-color: #092274;
+    box-shadow: inset 0px 0px 2px 2px rgba(35, 16, 119, 0.25);
+}
+form .row input:focus i{
+    border-color: #092274;
+    box-shadow: inset 0px 0px 2px 2px rgba(35, 16, 119, 0.25);
+}
+
+form .row input::placeholder{
+    color: #999;
+}
+.wrapper form .row i{
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: rgb(29, 27, 27);
+    font-size: 18px;
+    background: white;
+    border: 1px  solid lightgrey;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form .pass{
+    margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+    color: #222125;
+    font-size: 17px;
+    text-decoration: none;
+}
+.wrapper form .pass a:hover{
+    text-decoration: underline;
+}
+.wrapper form .button input{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: #2418AB;
+    border: 1px solid #220ff3;
+    cursor: pointer;
+}
+form .button input:hover{
+    background: #225ff3;
+}
+.wrapper form .signup-link{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.wrapper form .signup-link a{
+    color: #16a085;
+    text-decoration: none;
+}
+form .signup-link a:hover{
+    text-decoration: underline;
+}
+.wrapper form div#txtErr{
+    color: rgb(247, 77, 47);
+    padding-right: 30pt;
+}
+
+/* .nav_bar{
+    width: 100%;
+     margin-left: 80pt; 
+    padding-top: 10%;
+    min-width: 50%;
+    text-align: center;
+}
+form{
+    width: 400pt; 
+    min-width: 400pt;
+    text-align: left;
+    padding: 5%;
+    /* border: 1px solid rgb(53, 52, 52); 
+} */

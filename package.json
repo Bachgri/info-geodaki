@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
+    "sweetalert": "^2.1.2"
+  }
+}

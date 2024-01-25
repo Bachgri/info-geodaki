@@ -1,0 +1,21 @@
+
+
+  #seeMore, #seeLess{
+    background: none;
+    padding: 0.02vh 5vh !important;
+    font-size: 20pt;
+    border: none;
+  }
+  
+  div.n1{
+    background-color: red !important; text-align: center; color: aliceblue;
+    font-size: 15pt ; padding:7px 0 !important;
+  }
+  div.n2{
+    background-color: yellow !important; text-align: center; color: black;
+    font-size: 15pt ; padding:7px 0 !important;
+  }
+  div.n3{
+    background-color: green !important; text-align: center; color: aliceblue;
+    font-size: 15pt ; padding:7px 0 !important;
+  }

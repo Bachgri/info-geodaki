@@ -1,0 +1,223 @@
+                            var result = d.split('*');
+                            //console.log('====================================');
+                            //console.log(d);
+                            //console.log('====================================');
+                            var x = {
+                                lat: Number(result[0].split(',')[0]),
+                                lng: Number(result[0].split(',')[1])
+                            };
+                            var m0 = new google.maps.Marker({
+                                position: x,
+                                map: map,
+                                visible: true,
+                                icon: icons[v][0]
+                            });
+                            addListenerM(m0, result[0].split(',')[2], 'Début');
+                            let t = 1;
+                            for (; t < result.length - 1; t++) {
+                                cols = result[t].split(',');
+                                var pp = [x, {
+                                    lat: Number(cols[0]),
+                                    lng: Number(cols[1])
+                                }];
+                                color = ['blue', 'green'];
+                                const pl0 = new google.maps.Polyline({
+                                    path: pp,
+                                    map: map,
+                                    fillColor: color[Number(cols[4])],
+                                    strokeColor: color[Number(cols[4])],
+                                    strokeWeight: 5
+                                });
+                                addListenerP(pl0, cols[2], cols[3]);
+                                x = {
+                                    lat: Number(cols[0]),
+                                    lng: Number(cols[1])
+                                }; 
+                            }
+                            var m1 = new google.maps.Marker({
+                                position: x,
+                                map: map,
+                                visible: true,
+                                icon: icons[v][1]
+                            });
+                            addListenerM(m1, result[t-1].split(',')[2], "Fin");
+                            $("#imgWait").slideUp();
+
+
+                             success: (d) => {
+            veh = [];
+            var f = d.split('*');
+            for (let u = 0; u < f.length - 1; u++) {
+                mapVeh.set(f[u], []);
+                veh.push(f[u]);
+            }
+            
+            var dd, df, dt = new Date();
+             var dt = new Date();
+            var l = 0;
+            if (dt.getHours() <= 14) {
+                dd = '' + (dt.getDate()) + '-' + (dt.getMonth() + 1) + '-' + dt.getFullYear() + ' 00:00:00'
+                df = '' + dt.getDate() + '-' + (dt.getMonth() + 1) + '-' + dt.getFullYear() + ' 14:00:00'
+            } else {
+                dd = '' + (dt.getDate()) + '-' + (dt.getMonth() + 1) + '-' + dt.getFullYear() + ' 14:00:00';
+                df = '' + dt.getDate() + '-' + (dt.getMonth() + 1) + '-' + dt.getFullYear() + ' 23:59:00';
+            for (let i = 0; i < veh.length; i++) {
+                var c = veh[i];
+                var ic = icons[i][0];
+                var ic1 = icons[i][1];
+            }
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                mapTypeId: 'terrain',
+                center: ps,
+                mapTypeControl: false,
+                disableDefaultUI: true,
+            });
+            $("#imgWait").fadeIn(2500);
+            var d = new Date();
+
+            var date = new Date();
+            var dt = new Date();
+            for (let v = 0; v < veh.length; v++) {
+                const element = veh[v];
+                $.ajax({
+                    url: './lavVoi.php',
+                    type: 'GET',
+                    data: {
+                        veh: element,
+                        dd: dd, //(new Date().getHours() < 14) ? '06:00:00' : '14:00:00',
+                        df: df, // (new Date().getHours() < 14) ? '14:00:00' : '20:00:00'
+                        //iduser: readCookie('iduserST')
+                    },
+                    success: function(d) {
+                        console.log(d);
+                        if (d.length < 10) {
+                            swal({
+                                text: "Aucun véhicule palnifié dans ce shift. \n veuillez choisir un autre",
+                            })
+                        } else {
+
+                            d = d.replace('LINESTRING(', '');
+                            d = d.replace(')', '');
+                            polylineMap = new Map();
+                            var tx = d.split('*');
+                            for (let i = 0; i < tx.length - 1; i++) {
+                                var ty = tx[i].split(';');
+    
+                                var t = ty[0];
+                                var t1 = t.replace(' LINESTRING(', '');
+                                t1 = t1.replace(')', '');
+                                // t1 = t1.replace('\n', '');
+                                path = [];
+                                t1 = t1.split(',');
+                                for (let j = 0; j < t1.length; j++) {
+                                    var ttt = t1[j].split(' ');
+                                    var p = {
+                                        lat: Number(ttt[1]),
+                                        lng: Number(ttt[0])
+                                    };
+                                    // // //console.log(p);
+                                    path.push(p);
+                                }
+                                if (Number(ty[1]) < 30)
+                                    color = 'red';
+                                else if (Number(ty[1]) >= 30 && Number(ty[1]) < 70)
+                                    color = 'yellow'
+                                else
+                                    color = 'green'
+                                const pl = new google.maps.Polyline({
+                                    path: path,
+                                    map: map,
+                                    fillColor: color,
+                                    strokeColor: color,
+                                    title: ty[1] + "," + ty[2] + "," + ty[3]
+                                })
+                                // alert('ok'   )
+                                //polylineMap.set(ty[2], [ty[3], ty[1]])
+                                // //console.log('===========     Polyline      ==============');
+                                // //console.log(polylineMap.get(ty[2]));
+                                // //console.log('====================================');
+                                LVoi.set(ty[2], [ty[3], ty[1], ty[4], ty[5]]);
+                                google.maps.event.addListener(pl, 'click', function() {
+                                    swal({
+                                        text: "Circuit : " + this.title.split(',')[1] +
+                                            "\nVéhicule : " + this.title.split(',')[2] +
+                                            "\nTaux : " + this.title.split(',')[0] + "%" +
+                                            "\nDate début : " + ty[4] + "\nDate fin : " + ty[5],
+                                        button: 'ok'
+                                    })
+                                })
+                            }
+                        }
+    
+                        $("#imgWait").fadeOut(2500);
+                        console.log('====================================');
+                        console.log("End");
+                        console.log('====================================');
+                    },
+                    error: function(d) {
+                        //console.log(d);
+                    }
+    
+                })
+            }
+                // $.ajax({
+                //     url: 'LavVoi.php',
+                //     method: 'GET',
+                //     data: {
+                //         veh: c,
+                //         dd: dd ,
+                //         df: df
+                //     },
+                //     success: (d) => {
+                //         var result = d.split('*');
+                //         //console.log('====================================');
+                //         //console.log(d);
+                //         //console.log('====================================');
+                //         var x = {
+                //             lat: Number(result[0].split(',')[0]),
+                //             lng: Number(result[0].split(',')[1])
+                //         };
+                //         var m0 = new google.maps.Marker({
+                //             position: x,
+                //             map: map,
+                //             visible: true,
+                //             icon: icons[l][0]
+                //         });
+                //         addListenerM(m0, result[0].split(',')[2], 'Début');
+                //         let t = 1;
+                //         for (; t < result.length - 1; t++) {
+                //             cols = result[t].split(',');
+                //             var pp = [x, {
+                //                 lat: Number(cols[0]),
+                //                 lng: Number(cols[1])
+                //             }];
+                //             color = ['blue', 'green'];
+                //             const pl0 = new google.maps.Polyline({
+                //                 path: pp,
+                //                 map: map,
+                //                 fillColor: color[Number(cols[4])],
+                //                 strokeColor: color[Number(cols[4])],
+                //                 strokeWeight: 5
+                //             });
+                //             addListenerP(pl0, cols[2], cols[3]);
+                //             x = {
+                //                 lat: Number(cols[0]),
+                //                 lng: Number(cols[1])
+                //             };
+                //         }
+                //         var m1 = new google.maps.Marker({
+                //             position: x,
+                //             map: map,
+                //             visible: true,
+                //             icon: icons[l++][1]
+                //         });
+                //         addListenerM(m1, result[t-1].split(',')[2], "Fin");
+                //         $("#imgWait").slideUp();
+                //         /*console.log('====================================');
+                //         console.log(l);
+                //         console.log('====================================');*/
+                //     }
+                // });
+            };
+        }

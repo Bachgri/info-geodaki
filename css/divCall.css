@@ -1,0 +1,71 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
+ 
+
+/* .linkCall{
+    color: black;
+    background-color: none;
+    padding: 10px 20px ;
+    border: 1.92px solid #1f38f4;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 3px;
+    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+#uls ul {
+    display: inline-flex;
+    border: 1px solid lightgrey;
+    padding: 10px 0px;
+    align-items: center;
+    width: 97.5% !important;
+}
+#uls ul:last-child{
+    border-radius: 0 0 4px 4px ;
+} 
+#uls ul li{
+    list-style: none;
+    align-items: center;
+    width: 47%;
+}
+#uls ul li svg:first-child{
+    color: #1f38f4;
+    padding-right: 10px; 
+}
+#uls ul li a{
+    position: relative; top: -1px;
+    font: optional;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+#uls ul li:last-child{
+    position: relative;
+    left: 10px;
+    align-items: right;
+}
+
+#call .myBtns{
+    
+    font-family: inherit; 
+    border-width: 1px;
+    border-style: solid;
+    padding-bottom: 2vh; 
+    padding-top: 2vh; 
+    text-transform: uppercase;
+    letter-spacing: 0.8px; font-weight: bold;
+    cursor: pointer;border-radius: 5px !important;
+    font-size: 0.875rem; 
+    transition: background-color 80ms ease-in-out 0s, 
+                border-color 80ms ease-in-out 0s, 
+                box-shadow 60ms ease-in-out 0s;
+    background-color: var(--bg-color,#f3213d);
+    border-color: var(--border-color,#ff000d77);
+    color: var(--text-color,#FFFFFF);
+    box-shadow: transparent 0px 0px 0px 2px;
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 97% !important;
+    left: 1.5%;
+}

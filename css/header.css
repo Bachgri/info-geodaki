@@ -1,0 +1,35 @@
+.container .wrapper .title table tr td button i{
+    font-size:32pt !important;
+}
+.btns{
+    padding-left: 20px !important;
+}
+@media  (orientation : portrait) {
+    body, .container, .wrapper{
+        width: 120% !important;
+        padding-right: 0 !important;
+        margin-right: 0;
+    }
+    .container .wrapper .title table tr td button i{
+        font-size:45pt;
+    }
+    .container .wrapper .title{
+        height: 200px;
+    }
+    #cc{
+        width: 97% !important;padding-left: 1%;
+    }
+    .btnsd {
+        padding-top: 0150px;
+        height: 80px;align-items: center !important; 
+    }
+     
+    .myBtns{ 
+        font-size: 17pt;
+        width:  calc(48%);
+        height: 60px !important;
+        padding-top: 12pt !important;
+        margin-top: 100px;
+    }
+    
+}

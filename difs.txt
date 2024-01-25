@@ -1,0 +1,67 @@
+/*$.ajax({
+                url: './pltng.php',
+                type: 'POST',
+                success: function(d) {
+                    d = d.replace('POLYGON((', '');
+                    d = d.replace('))', '');
+                    path = [];
+                    var t = d.split('*');
+                    var tt = t[0].split(',');
+                    for (let i = 0; i < tt.length; i++) {
+                        path.push({
+                            lat: Number(tt[i].split(' ')[1]),
+                            lng: Number(tt[i].split(' ')[0])
+                        })
+                    }
+                    var color = '#ef3352'
+                    // console.log(path);
+                    polygonTanger = new google.maps.Polygon({
+                        paths: path,
+                        strokeColor: '#ef1a5d',
+                        id: 0,
+                        strokeOpacity: 0.5,
+                        strokeWeight: 2,
+                        fillColor: color,
+                        fillOpacity: 0.6,
+                        title: 'Tanger',
+                        map: map,
+                        visible: true
+                    });
+                    // console.log('====================================');
+                    // console.log(polygonTanger.title);
+                    // console.log('====================================');
+                }
+            })
+            $.ajax({
+                url: 'uprcnt.php',
+                success: function(d) {
+                    // console.log("d : " + d);
+                    var p = d.split(';');
+                    pourcentages = [];
+                    for (let i = 0; i < p.length; i++) {
+                        var t1 = p[i].split(',');
+                        pourcentages.push([t1[0], t1[1], t1[2], t1[3]]);
+                    }
+                    for (let i = 0; i < markersT.length; i++) {
+                        markersT[i].setOptions({
+                            label: {
+                                text: pourcentages[i][1] + '%',
+                                fontWeight: 'bold',
+                            }
+                        })
+                    }
+                    $.ajax({
+                        url: 'tt.php',
+                        success: function(d) {
+                            // console.log("d : " + d);
+                            markerTanger.setOptions({
+                                label: {
+                                    text: d + '%',
+                                    fontWeight: 'bold'
+                                }
+                            })
+                            $('#imgWait').fadeOut(500);
+                        }
+                    })
+                }
+            })*/

@@ -1,0 +1,259 @@
+body {
+    overflow-x: hidden;
+}
+
+table td tr .btn {
+    outline: none !important;
+    color: black !important;
+}
+
+.Sclass {
+    color: white;
+}
+
+.rowc ul {
+    width: 110% !important;
+}
+
+.rowc ul li {
+    width: 50%;
+    text-align: left;
+}
+
+.rowc ul li a,
+.rowc ul li {
+    text-decoration: none;
+    color: black;
+    font-size: 15pt !important;
+}
+
+#exportContent table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+/* #exportContent table th{
+    background-color: #3d3d3d;
+    color: rgb(248, 241, 241);
+    font-weight: bold;
+}
+#exportContent table th, #exportContent table td{
+    padding: 5px;
+    border: 1px solid #ccc;
+} */ 
+#map,
+.map1 {
+    width: 100%;
+    height: 72.5vh !important;
+}
+
+.map2 {
+    height: 4vh !important;
+}
+
+#dbtns {
+    width: 40% !important;
+    margin: 0 !important;
+    margin-top: -0.6cm !important;
+    padding: 0 !important;
+}
+
+#dbtns button.btn {
+    width: 40.61% !important;
+    height: 75px !important;
+    font-size: 17pt !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@media (orientation : portrait) {
+    #dbtns {
+        align-items: center;
+        width: 100% !important;
+        margin-top: -23px;
+    }
+
+    #dbtns button.btn {
+        height: 45px !important;
+    }
+
+    #map,
+    .map1 {
+        height: calc(100vh - 40px) !important;
+    }
+
+
+
+}
+
+@media (orientation : landscape) {
+    #dbtns {
+        width: 100% !important;
+        align-items: flex-start;
+        padding-left: 0 !important;
+    }
+
+    #dbtns button.btn {
+        width: 20% !important;
+    }
+
+    #parentDC {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+}
+
+.gmnoprint:last-child,
+.gmnoprint:last-child .gm-control-active img {
+    width: 150% !important;
+}
+
+.gm-control-active img {
+    width: 100% !important;
+    align-items: center;
+    text-align: center;
+}
+
+#myChart {
+    height: 100% !important;
+    width: 250px !important;
+    font-size: 30pt !important;
+    /* margin-left: calc((100%-500px)/2); */
+}
+
+#statitstics {
+    display: inline;
+    width: 100% !important;
+}
+
+#chartes {
+    /* position: absolute; */
+    left: 270px !important;
+    top: 30 px !important;
+    width: calc(100% - 260px) !important;
+}
+
+#tblb {
+    width: 220% !important;
+}
+
+#tblb tr {
+    border-bottom: 2px solid lightgrey;
+}
+
+#spliter {
+    width: 100% !important;
+    height: 100vh !important;
+    border: 7px solid black;
+    z-index: 0;
+    visibility: hidden;
+    text-align: left !important;
+}
+
+/* 
+    * Optional: Makes the sample page fill the window. 
+    */
+
+#map,
+.main {
+    height: 100vh !important;
+}
+
+#right_panel {
+    z-index: 0;
+    width: 100%;
+    padding: 0;
+    height: 10%;
+    bottom: -1.5vh !important;
+    /* background-color: red; */
+    text-align: left;
+}
+
+.resizable {
+    width: 100% !important;
+    height: 9vh;
+    border-radius: 0.75px;
+    margin: 0;
+    padding-top: 10px;
+    background-color: #29e;
+    /* opacity: 0.8; */
+    color: white;
+    font-family: sans-serif;
+    touch-action: none;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 1.5vh;
+    border-top: 24px solid #f0f1f2;
+    max-height: 70vh;
+    min-height: 7.5vh;
+    overflow-y: auto;
+}
+
+#dtsm {
+    font-size: 15px !important;
+    padding-bottom: 19px;
+    padding-top: 0.5vh;
+}
+
+#main {
+    text-align: right !important;
+}
+
+#sts {
+    width: 100%;
+    height: 20vh;
+}
+
+table#sts,
+table#sts tr,
+table#sts td {
+    border-collapse: collapse;
+    /* border: 2px solid black; */
+    text-align: center !important;
+}
+
+#sts tr td .d {
+    height: 2cm;
+    width: 2cm;
+    border-radius: 50px;
+    background-color: red;
+    line-height: normal;
+    text-align: center;
+    align-self: center;
+    padding: 0.5cm 0;
+    font-weight: bold;
+    font-size: 20pt;
+    color: black;
+}
+
+#spn2,
+#spn6 {
+    color: #f0f1f2 !important;
+}
+
+#sts tr td {
+    border-right: 2px solid;
+    text-align: center;
+    align-items: center;
+    padding: 4px;
+}
+
+#sts td:nth-child(odd) div {
+    background-color: greenyellow;
+}
+
+#sts tr {
+    border-bottom: 2px solid;
+    text-align: center;
+}
+
+#spn5 {
+    background-color: #29e !important;
+    padding: 0.25vh 0.4vh;
+}
+
+#ContTable {
+    width: 100% !important;
+    text-align: center;
+}
