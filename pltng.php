@@ -13,4 +13,3 @@ $c = 0;
 if ($data = $p->fetch(PDO::FETCH_ASSOC)) {
     echo $data['uniond'] . '*' . $data['yt'] . '*' . $data['xt'];
 }
- 

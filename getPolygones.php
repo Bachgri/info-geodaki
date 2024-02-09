@@ -10,7 +10,7 @@ $sqlT = "select count(*) as c1 , (select count(*)::float as c2
                 where   ST_Contains( dd.geom , ST_SetSRID(ST_MakePoint(bb.longitude, bb.latitude),4326) ) 
                         and  dd.annexe = d.annexe 
                 group by annexe)
-                
+                 
             , d.annexe from bacs b , decoup2 d 
             where   ST_Contains( d.geom , ST_SetSRID(ST_MakePoint(b.longitude, b.latitude),4326) ) and lastupdate::date = current_timestamp::date  
             group by annexe order by annexe";
